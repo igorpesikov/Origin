@@ -1,0 +1,26 @@
+My second change Pesikov
+My first change Pesikov
+Private Sub CommandButton1_Click()
+i = 6
+Do While Worksheets("Накладная").Cells(i, 1).Value <> ""
+i = i + 1
+Loop
+Worksheets("Накладная").Cells(i, 1) = Worksheets("Форма").ComboBox5.Column(0)
+Worksheets("Накладная").Cells(i, 2) = Worksheets("Форма").ComboBox5.Column(1)
+Worksheets("Накладная").Cells(i, 3) = Worksheets("Форма").TextBox1.Text
+
+If CheckBox1 Then
+Worksheets("Накладная").Cells(i, 4) = Worksheets("Накладная").Cells(i, 4) + 150
+End If
+If CheckBox2 Then
+Worksheets("Накладная").Cells(i, 4) = Worksheets("Накладная").Cells(i, 4) + 100
+End If
+If CheckBox3 Then
+Worksheets("Накладная").Cells(i, 4) = Worksheets("Накладная").Cells(i, 4) + 100
+End If
+If CheckBox4 Then
+Worksheets("Накладная").Cells(i, 4) = Worksheets("Накладная").Cells(i, 4) + 200
+End If
+
+Worksheets("Накладная").Cells(i, 5) = Worksheets("Накладная").Cells(i, 2) * Worksheets("Накладная").Cells(i, 3) + Worksheets("Накладная").Cells(i, 4)
+End Sub
